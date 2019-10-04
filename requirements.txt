@@ -1,0 +1,5 @@
+#Dev dependencies
+pylint==2.3.1
+pudb==2018.1
+coverage==4.5.3
+flake8==3.7.7
