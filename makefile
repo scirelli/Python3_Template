@@ -13,6 +13,8 @@ ifneq "$(PYTHON3_VERSION)" "3.7"
 $(error 'Python 3.7.x is required.')
 endif
 
+
+
 ######################
 # Help
 ######################
@@ -32,8 +34,6 @@ Usage:
 
 	make installVariableReplacer    will install variable replacer, making it avaiable by calling `replacer`
 
-	make updateAWSToken             If you have SecurityTokenScript avaiable, this command will run it.
-
 	make test						will run all unit tests and integration tests.
 
 	make unitTestDebug              will run the unit tests in debug mode.
@@ -49,6 +49,7 @@ export PROJECT_HELP_MSG
 .PHONY: help
 help:
 	@printf "%s" "$$PROJECT_HELP_MSG" | less
+
 
 
 ######################
@@ -139,6 +140,7 @@ flake8:
 .PHONY: lint
 lint: pylint flake8
 	@echo 'Linting with Flake8 and Pylint complete'
+
 
 
 ##########################
