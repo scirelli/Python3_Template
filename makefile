@@ -3,14 +3,14 @@ SHELL:=/usr/bin/env bash
 
 PROJECT_NAME ?= ProjectNameHere
 DOWNLOAD_DIR=/tmp
-PYTHON3_VERSION=$(shell python3 --version | grep -o '3.7')
+PYTHON3_VERSION=$(shell python3 --version | grep -oE '3\.[7-9]')
 VENV_DIR='.venv'
 PACKAGE_FILE_NAME?=$(PROJECT_NAME)
 TIME_STAMP=$(shell date +"%y%m%d")
 STACK_TIMESTAMP:=$(TIME_STAMP)
 
-ifneq "$(PYTHON3_VERSION)" "3.7"
-$(error 'Python 3.7.x is required.')
+ifeq "$(PYTHON3_VERSION)" ""
+$(error 'At least Python 3.7 is required.')
 endif
 
 
