@@ -2,7 +2,6 @@
 SHELL:=/usr/bin/env bash
 
 PROJECT_NAME ?= ProjectNameHere
-MAKE_MODULES_DIR ?= ./scripts/make_modules
 TIME_STAMP=$(shell date +"%y%m%d")
 STACK_TIMESTAMP:=$(TIME_STAMP)
 
