@@ -46,6 +46,7 @@ unsafe-load-any-extension=no
 
 
 [MESSAGES CONTROL]
+disable = C0330, C0326
 
 # Only show warnings with the listed confidence levels. Leave empty to show
 # all. Valid levels: HIGH, INFERENCE, INFERENCE_FAILURE, UNDEFINED.
@@ -314,6 +315,7 @@ redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
 
 
 [FORMAT]
+max-line-length = 88
 
 # Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
 expected-line-ending-format=
