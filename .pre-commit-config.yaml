@@ -55,6 +55,7 @@ repos:
   rev: v1.5.7
   hooks:
   -   id: autopep8
+#    args: ["-i", "-vvv"]
 
 # - repo: https://github.com/asottile/reorder_python_imports
 #   rev: v2.4.0
