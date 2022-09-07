@@ -37,6 +37,10 @@ vtest: .develop ## Verbose tests
 vvtest: .develop ## More verbose tests
 	@pipenv run pytest -vv
 
+.PHONY: dbtest
+dbtest: .develop ## Debuggable tests
+	@pipenv run pytest --capture=no -vv
+
 .PHONY: viewCoverage
 viewCoverage: htmlcov ## View the last coverage run
 	open -a "Google Chrome" htmlcov/index.html
