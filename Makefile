@@ -9,14 +9,14 @@ PYTHON=$(VENV_BIN)/python
 .PHONY: all
 all: test
 
-$VENV_DIR:
+$(VENV_DIR):
 	python3 -m venv --prompt $(notdir $(CURDIR)) ./$(VENV_DIR)
 	@echo 'Environment created. Run "source ./$(VENV_DIR)/bin/activate" to activate the virtual environment.\n"deactivate" to exit it.'
 
 .update-pip: ## Update pip
 	@$(PIP) install -U 'pip'
 
-.install-deps-dev: $VENV_DIR
+.install-deps-dev: $(VENV_DIR)
 	@$(PIP) install --require-virtualenv --requirement requirements-dev.txt
 	@touch .install-deps-dev
 
@@ -66,7 +66,7 @@ viewCoverage: htmlcov ## View the last coverage run
 	open -a "Google Chrome" htmlcov/index.html
 
 .PHONY: shell
-shell: $VENV_DIR
+shell: $(VENV_DIR)
 	@echo 'Activating virtual environment.' && $(SHELL) --init-file <(echo ". ~/.bashrc; . $(VENV_BIN)/activate;")
 
 .PHONY: clean
