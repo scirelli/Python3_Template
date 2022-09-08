@@ -1,6 +1,6 @@
 SHELL:=/usr/bin/env bash
 
-VENV_DIR='.venv'
+VENV_DIR=.venv
 VENV_BIN=$(VENV_DIR)/bin
 
 PIP=$(VENV_BIN)/pip
@@ -65,6 +65,10 @@ vvtest: .develop ## More verbose tests
 viewCoverage: htmlcov ## View the last coverage run
 	open -a "Google Chrome" htmlcov/index.html
 
+.PHONY: shell
+shell: $VENV_DIR
+	@echo 'Activating virtual environment.' && $(SHELL) --init-file <(echo ". ~/.bashrc; . $(VENV_BIN)/activate;")
+
 .PHONY: clean
 clean: ## Remove all generated files and folders
 	@$(PYTHON) -m pre-commit uninstall || true
@@ -94,5 +98,3 @@ help :
 	@grep -E '^[[:alnum:]_-]+[[:blank:]]?:.*##' $(MAKEFILE_LIST) \
 		| sort \
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
-# bash --init-file <(echo ". ~/.bashrc; . $project_root/bbb-hambone-python-driver/.venv/bin/activate; ")
