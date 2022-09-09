@@ -66,12 +66,12 @@ viewCoverage: htmlcov ## View the last coverage run
 	open -a "Google Chrome" htmlcov/index.html
 
 .PHONY: shell
-shell: $(VENV_DIR)
+shell: $(VENV_DIR) ## Open the virtual environment
 	@echo 'Activating virtual environment.' && $(SHELL) --init-file <(echo ". ~/.bashrc; . $(VENV_BIN)/activate;")
 
 .PHONY: clean
 clean: ## Remove all generated files and folders
-	@$(PYTHON) -m pre-commit uninstall || true
+	@$(VENV_BIN)/pre-commit uninstall || true
 	@rm -rf .venv
 	@rm -rf `find . -name __pycache__`
 	@rm -f `find . -type f -name '*.py[co]' `
