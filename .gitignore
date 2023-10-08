@@ -83,7 +83,6 @@ profile_default/
 ipython_config.py
 
 # pyenv
-.python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
@@ -135,3 +134,60 @@ junit_xml_test_report.xml
 sonar-project.properties
 .DS_Store
 config.json
+.install-deps-dev
+
+bin/
+pyserial-3.5.dist-info/
+serial/
+
+Adafruit_BBIO/
+Adafruit_I2C.py
+Adafruit_PureIO/
+adafruit_ads1x15/
+adafruit_blinka/
+adafruit_bus_device/
+adafruit_circuitpython_ads1x15-2.2.21.dist-info/
+adafruit_circuitpython_busdevice-5.2.3.dist-info/
+adafruit_circuitpython_requests-1.12.8.dist-info/
+adafruit_circuitpython_typing-1.8.1.dist-info/
+adafruit_platformdetect/
+adafruit_requests.py
+analogio.py
+bitbangio.py
+board.py
+busio.py
+circuitpython_typing/
+digitalio.py
+keypad.py
+microcontroller/
+micropython-stubs/
+micropython.py
+neopixel_write.py
+onewireio.py
+overlays/
+pulseio.py
+pwmio.py
+pyftdi-0.54.0.dist-info/
+pyftdi/
+python_json_logger-2.0.2.dist-info/
+pythonjsonlogger/
+pyusb-1.2.1.dist-info/
+rainbowio.py
+tabulate-0.8.10.dist-info/
+tabulate.py
+typing_extensions-4.2.0.dist-info/
+typing_extensions.py
+usb/
+usb_hid.py
+wheel-0.37.1.dist-info/
+wheel/
+mypy-0.971.dist-info/
+mypy/
+mypy_extensions-0.4.3.dist-info/
+mypy_extensions.py
+mypyc/
+tomli-2.0.1.dist-info/
+tomli/
+typed_ast-1.5.4.dist-info/
+typed_ast/
+typing_extensions-4.3.0.dist-info/

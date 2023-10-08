@@ -6,13 +6,11 @@ from os.path import basename, dirname, splitext
 
 from setuptools import find_namespace_packages, setup  # type: ignore
 
-PROJECT_NAME = ""        # TODO: Fill in project name
-PYTHON_VERSION = (3, 10)
+PROJECT_NAME = "Project Name Here"
+PYTHON_VERSION = (3, 7)
 
 if sys.version_info < PYTHON_VERSION:
-    raise RuntimeError(
-        f"{PROJECT_NAME} requires Python {'.'.join([str(x) for x in PYTHON_VERSION])}+"
-    )
+    raise RuntimeError(f"{PROJECT_NAME} requires Python {'.'.join([str(x) for x in PYTHON_VERSION])}+")
 
 HERE = pathlib.Path(__file__).parent
 IS_GIT_REPO = (HERE / ".git").exists()
@@ -20,9 +18,7 @@ IS_GIT_REPO = (HERE / ".git").exists()
 base_dir = dirname(__file__)
 
 __pkginfo__ = {}
-exec(
-    (HERE / "__pkginfo__.py").read_text("utf-8"), __pkginfo__
-)  # pylint: disable=exec-used
+exec((HERE / "__pkginfo__.py").read_text("utf-8"), __pkginfo__)  # pylint: disable=exec-used
 
 version = str(__pkginfo__.get("version", ""))
 
@@ -40,7 +36,13 @@ setup(
     package_dir={"": "src"},
     packages=find_namespace_packages("src"),
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
-    package_data={"": ["py.typed"]}, # TODO: Put your main package names here
+    package_data={
+        "event_producers": ["py.typed"],
+        "logger": ["py.typed"],
+        "presenter_drivers": ["py.typed"],
+        "serial_bbb": ["py.typed"],
+        "state_handler": ["py.typed"],
+    },
     include_package_data=True,
     test_suite="tests.unit",
     dependency_links=[],
